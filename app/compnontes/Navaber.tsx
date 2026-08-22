@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -6,12 +7,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         <h1 className="text-2xl font-bold text-blue-50 cursor-pointer">
-          Style<span className="text-orange-500">Studio</span>
+         <Link href="/"> Style<span className="text-orange-500">Studio</span> </Link>
         </h1>
         
-        <button className="bg-orange-500 font-semibold text-white px-5 py-2 rounded-lg hover:bg-orange-700 transition duration-300 cursor-pointer">
+        <Link href="/booking" className="bg-orange-500 font-semibold text-white px-5 py-2 rounded-lg hover:bg-orange-700 transition duration-300 cursor-pointer">
         Book Seat
-        </button>
+        </Link>
 
       </div>
     </nav>

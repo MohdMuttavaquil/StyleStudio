@@ -1,7 +1,9 @@
-import React from 'react'
+'uee client'
+
 import Hero from '../lib/utils/wright'
 import Card from './Card'
 import { beard, haircut, hairWash } from '../lib/utils/data'
+import Link from 'next/link'
 
 const Homes = () => {
     return (
@@ -13,9 +15,9 @@ const Homes = () => {
                 <p className='text-3xl font-semibold'>Your <span className='text-orange-500'>Style</span> Our <span className='text-orange-500'>Craft</span></p>
                 <Hero />
 
-                <button className="bg-orange-500 font-semibold text-white px-5 py-2 rounded-lg hover:bg-orange-700 transition duration-300 w-fit mx-auto cursor-pointer">
+                <Link href='/booking' className="bg-orange-500 font-semibold text-white px-5 py-2 rounded-lg hover:bg-orange-700 transition duration-300 w-fit mx-auto cursor-pointer">
                     Book Seat
-                </button>
+                </Link>
 
                 <div className='font-semibold text-xl mt-[10vh]'>
                     <p >10+ Years of Expertise <span className='pl-6'>3+ Locations</span> </p>
