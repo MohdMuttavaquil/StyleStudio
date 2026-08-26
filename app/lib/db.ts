@@ -11,10 +11,14 @@ const pool = mysql.createPool({
     port: Number( process.env.DB_PORT),
 
     ssl: {
-      ca: fs.readFileSync(
-        path.join(process.cwd(), 'ca.pem')
-      )
+      ca: process.env.AIVEN_CA
     }
+
+    // ssl: {
+    //   ca: fs.readFileSync(
+    //     path.join(process.cwd(), 'ca.pem')
+    //   )
+    // }
 
 })
 
