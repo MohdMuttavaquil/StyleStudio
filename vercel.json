@@ -1,0 +1,8 @@
+{
+"corns": [
+    {
+        "path": "/api/corn/reset-slots",
+        "schedule": "0 0 * * *"
+    }
+]
+}
