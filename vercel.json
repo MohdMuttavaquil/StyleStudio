@@ -1,7 +1,7 @@
 {
-"corns": [
+"crons": [
     {
-        "path": "/api/corn/reset-slots",
+        "path": "/api/cron/reset-slots",
         "schedule": "0 0 * * *"
     }
 ]
