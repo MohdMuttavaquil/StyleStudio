@@ -1,8 +1,7 @@
 'use client'
 import { isValidPhoneNumber } from 'libphonenumber-js'
 import { FormEvent, useState } from "react"
-import { showErrorToast, showSuccessToast } from '../lib/utils/toast'
-
+import { showErrorToast, showtost } from '../lib/utils/toast'
 
 const page = () => {
 
@@ -24,7 +23,7 @@ const page = () => {
       return
     }
 
-    const response = await fetch("/api/book", {
+    const response = await fetch("/api/booking", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,9 +36,9 @@ const page = () => {
   });
 
   const result = await response.json();
-  showSuccessToast(result.message)
-  
+  showtost(result)
   }
+
 
   return (
     <div className="min-h-screen py-10 mx-2 text-white">
@@ -47,6 +46,7 @@ const page = () => {
       <div className="font-semibold text-2xl text-center">Book Your Seat & Save Your Time</div>
 
       <div>
+
 
         <form onSubmit={handleSubmti} className="my-10 rounded-2xl flex flex-col gap-10">
           <input name="name"placeholder="Enter your name" required className="outline-none py-2 border-b-2 border-b-white md:w-[25%] w-full mx-auto" />

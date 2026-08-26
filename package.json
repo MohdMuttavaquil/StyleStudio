@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "libphonenumber-js": "^1.13.11",
+    "mysql2": "^3.24.1",
     "next": "16.3.1",
+    "path": "^0.12.7",
     "postcss": "^8.5.26",
     "react": "19.2.8",
     "react-dom": "19.2.8",

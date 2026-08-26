@@ -1,5 +1,10 @@
 import { toast } from 'react-toastify';
 
+type data = {
+  success: boolean,
+  message: string
+}
+
 export const showSuccessToast = (message: string) => {
   toast.success(message, {
     position: 'top-right',
@@ -23,3 +28,11 @@ export const showErrorToast = (message: string) => {
     progress: undefined,
   });
 };
+
+export const showtost = (data: data) =>{
+  if (!data.success) {
+    showErrorToast(data.message)
+  } else{
+    showSuccessToast(data.message)
+  }
+}
