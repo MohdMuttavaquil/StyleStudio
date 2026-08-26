@@ -47,7 +47,7 @@ export async function POST(req: Request) {
             email: process.env.RECEIVER_EMAIL,
           },
         ],
-        subject: "New Booking",
+        subject: "New Selon Booking",
         htmlContent: `
           <h2>New Booking</h2>
 
