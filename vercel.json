@@ -1,10 +1,6 @@
 {
 "crons": [
     {
-        "path": "/api/cron/reset-slots",
-        "schedule": "0 0 * * *"
-    },
-    {
         "path": "/api/cron/check",
         "schedule": "0 */4 * * *"
     }
