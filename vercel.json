@@ -1,8 +1,8 @@
 {
 "crons": [
     {
-        "path": "/api/cron/check",
-        "schedule": "0 */4 * * *"
+        "path": "/api/cron/reset-slots",
+        "schedule": "0 0 * * *"
     }
 ]
 }
