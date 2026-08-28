@@ -1,26 +1,13 @@
-import mysql from 'mysql2/promise'
-import fs from 'fs'
-import path from 'path'
+'use server'
 
+import mongoose from "mongoose"
 
-const pool = mysql.createPool({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    port: Number( process.env.DB_PORT),
-
-    // ssl: {
-    //   ca: process.env.AIVEN_CA
-    // }
-
-    ssl: {
-      ca: fs.readFileSync(
-        path.join(process.cwd(), 'ca.pem')
-      )
+export const dbConnecton = async ()=>{
+    try {
+         await mongoose.connect(process.env.BD_URL!)
+         console.log('database connected')
+    } catch (error) {
+        console.log(error)
     }
-
-})
-
-
-export default pool
+   
+}

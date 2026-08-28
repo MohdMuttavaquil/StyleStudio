@@ -1,8 +1,13 @@
 'use server'
-import pool from "@/app/lib/db"
+import { dbConnecton } from "@/app/lib/db"
+import bookingModel from "@/app/models/booking"
 import { NextResponse } from "next/server"
 
+// Connect to Database
+dbConnecton()
+
 export async function POST(req: Request) {
+  
   const body = await req.json()
   const { name, phoneNo, time } = body
 
@@ -14,19 +19,24 @@ export async function POST(req: Request) {
     hour12: true
   })
   if (currentTime >= time || time === null) {
-  return NextResponse.json({success: false, message: "Enter valid time"})
+    return NextResponse.json({ success: false, message: "Enter valid time" })
   }
 
+  // Check slot avaliabilaty
+  try {
+    const slot = await bookingModel.findOne({ time_slot: time })
 
-  // check time avaliablety
-  const [result]: any = await pool.execute(
-    'UPDATE slots SET booked_count = booked_count +1 WHERE time_slot = ? AND booked_count < max_capacity', 
-    [time]
-  )
-  if (result.affectedRows === 0) {
-   return NextResponse.json({success: false, message: "Slote full chose another time"})
+    if (slot.booked_count >= slot.max_capacity) {
+      return NextResponse.json({ success: false, message: "Seat not avaliable chose another time" })
+    }
+    slot.booked_count += 1
+    await slot.save()
+
+  } catch (error) {
+    console.error(error)
+    return NextResponse.json({ success: false, message: "Somthing wants wrong" })
   }
-  
+
 
   // Send Email to owner
   try {
@@ -61,14 +71,14 @@ export async function POST(req: Request) {
     if (!response.ok) {
       const error = await response.text()
       console.error("Brevo error:", error)
-      return NextResponse.json({success: false, message: "Failed to send email"})
+      return NextResponse.json({ success: false, message: "Failed to send email" })
     }
 
-    return NextResponse.json({success: true, message: "Booking submitted successfully"})
-    
+    return NextResponse.json({ success: true, message: "Booking submitted successfully" })
+
   } catch (error) {
     console.error(error)
-    return NextResponse.json({success: false, message: "Somthing wants wrong"})
+    return NextResponse.json({ success: false, message: "Somthing wants wrong" })
   }
 
 }
