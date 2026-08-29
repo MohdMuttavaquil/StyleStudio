@@ -1,5 +1,6 @@
 'use server'
 import { dbConnecton } from "@/app/lib/db"
+import { timeToMinutes } from "@/app/lib/utils/data"
 import bookingModel from "@/app/models/booking"
 import { NextResponse } from "next/server"
 
@@ -7,9 +8,12 @@ import { NextResponse } from "next/server"
 dbConnecton()
 
 export async function POST(req: Request) {
-  
+
   const body = await req.json()
   const { name, phoneNo, time } = body
+  if (time === null) {
+    return NextResponse.json({ success: false, message: "Enter valid time" })
+  }
 
   // Check time validation 
   const now = new Date()
@@ -18,7 +22,10 @@ export async function POST(req: Request) {
     minute: "2-digit",
     hour12: true
   })
-  if (currentTime >= time || time === null) {
+
+  let timeNumber = timeToMinutes(time)
+  let currentTimeNumber = timeToMinutes(currentTime)
+  if (currentTimeNumber >= timeNumber) {
     return NextResponse.json({ success: false, message: "Enter valid time" })
   }
 
