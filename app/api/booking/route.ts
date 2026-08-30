@@ -11,6 +11,7 @@ export async function POST(req: Request) {
 
   const body = await req.json()
   const { name, phoneNo, time } = body
+  
   if (time === null) {
     return NextResponse.json({ success: false, message: "Enter valid time" })
   }
@@ -18,6 +19,7 @@ export async function POST(req: Request) {
   // Check time validation 
   const now = new Date()
   const currentTime = now.toLocaleTimeString('en-IN', {
+    timeZone: 'Asia/Kolkata',
     hour: "numeric",
     minute: "2-digit",
     hour12: true
