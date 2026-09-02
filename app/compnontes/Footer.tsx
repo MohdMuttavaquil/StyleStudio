@@ -8,7 +8,7 @@ const Footer = () => {
 
                     <div className="md:max-w-[30%]">
                         <h2 className="text-3xl font-bold text-white">
-                            Style<span className="text-orange-500">Studio</span>
+                            Style<span className="text-orange-500">vibe</span>
                         </h2>
 
                         <p className="mt-4">
@@ -21,7 +21,7 @@ const Footer = () => {
                             Contact
                         </h3>
 
-                        <p>Email: support@stylestudio.com</p>
+                        <p>Email: support@stylevibe.com</p>
                         <p className="mt-2">Phone: +91 98765 43210</p>
 
                         <p className="mt-2">
