@@ -4,17 +4,17 @@
 
 ## ✨ Features
 
- **Online Seat Booking** – Customers can view available seats and book appointments online.
- **Email Notifications** – Sends booking notifications to the salon owner via email.
- **Salon Services** – Provides information about the salon and its available haircut and grooming services.
- **Responsive Design** – Optimized for desktop, tablet, and mobile devices.
+*  **Online Seat Booking** – Customers can view available seats and book appointments online.
+*  **Email Notifications** – Sends booking notifications to the salon owner via email.
+*  **Salon Services** – Provides information about the salon and its available haircut and grooming services.
+*  **Responsive Design** – Optimized for desktop, tablet, and mobile devices.
 
 ## 🛠️ Tech Stack
 
- **Frontend:** Next.js, TypeScript, Tailwind CSS
- **Database:** MongoDB
- **Email Service:** Brevo
- **Deployment:** Vercel
+* **Frontend:** Next.js, TypeScript, Tailwind CSS
+* **Database:** MongoDB
+* **Email Service:** Brevo
+* **Deployment:** Vercel
 
 ## 🚀 Project Overview
 
