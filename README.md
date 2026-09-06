@@ -1,37 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Style Studio
 
-## Getting Started
+**Style Studio** is a modern haircut salon booking platform that allows customers to conveniently book available seats online while providing salon owners with real-time booking and seat availability updates.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ **Online Seat Booking** – Customers can view available seats and book appointments online.
+ **Email Notifications** – Sends booking notifications to the salon owner via email.
+ **Salon Services** – Provides information about the salon and its available haircut and grooming services.
+ **Responsive Design** – Optimized for desktop, tablet, and mobile devices.
 
-live demo [https://style-studio-mu.vercel.app/]
+## 🛠️ Tech Stack
 
+ **Frontend:** Next.js, TypeScript, Tailwind CSS
+ **Database:** MongoDB
+ **Email Service:** Brevo
+ **Deployment:** Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Project Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Style Studio was developed to simplify the salon appointment process by replacing traditional booking methods with an online seat reservation system. Customers can check real-time availability and reserve a seat, while salon owners receive email notifications whenever a new booking is made.
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is deployed on **Vercel** and uses **MongoDB** for data storage and **Brevo** for email notifications.
